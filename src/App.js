@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style.css';
 
 function App() {
   const [isPaneOpen, setIsPaneOpen] = React.useState(true);
+  const [panePosition, setPanePosition] = React.useState(400);
   const togglePane = (e) => {
     setIsPaneOpen(!isPaneOpen);
   };
+
+  useEffect(() => {
+    // eslint-disable-next-line no-restricted-globals
+    setPanePosition(isPaneOpen ? 300 : screen.height - 200);
+  }, [isPaneOpen]);
 
   const thumbClasses = 'thumb-frame m-2 rounded-md shadow-md object-no-repeat bg-top relative';
   const heroThumbs = 'hero-thumb rounded-md shadow-md object-no-repeat bg-cover bg-top relative';
@@ -299,7 +305,8 @@ function App() {
             </div>
 
             <div
-              className={`pane flex flex-col h-full w-full absolute m-auto left-0 right-0 box z-20 ease-in-out duration-500 ${isPaneOpen && 'pane-active'}`}
+              className={`pane flex flex-col h-full w-full absolute m-auto left-0 right-0 box z-20 ease-in-out duration-500`}
+              style={{ top: panePosition + 'px' }}
             >
               <div></div>
               <div

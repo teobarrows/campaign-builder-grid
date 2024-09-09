@@ -823,12 +823,12 @@ body {
 }
 
 .pane {
-    top: 900px;
+    /*top: 900px;*/
     /*transition: all 0.3s ease-in-out;*/
 }
 
 .pane-active {
-  top: 400px;
+  /*top: 400px;*/
 }
 
 @media screen and (min-width: 1px) and (max-width: 699px) {
