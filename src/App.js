@@ -4,16 +4,25 @@ import './style.css';
 function App() {
   const [isPaneOpen, setIsPaneOpen] = React.useState(true);
   const [panePosition, setPanePosition] = React.useState(400);
+  const [windowHeight, setWindowHeight] = React.useState(0);
   const togglePane = (e) => {
+    if (isPaneOpen) {
+      window.scrollTo({ top: 262, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     setIsPaneOpen(!isPaneOpen);
   };
 
   useEffect(() => {
     // eslint-disable-next-line no-restricted-globals
-    setPanePosition(isPaneOpen ? 300 : screen.height - 200);
+    setPanePosition(isPaneOpen ? 360 : screen.height + 560);
+    // eslint-disable-next-line no-restricted-globals
+    setWindowHeight(window.innerHeight);
   }, [isPaneOpen]);
 
-  const thumbClasses = 'thumb-frame m-2 rounded-md shadow-md object-no-repeat bg-top relative';
+  const thumbClasses =
+    'thumb-frame m-2 rounded-md shadow-md object-no-repeat bg-top relative hover:scale-[102%] hover:hue-rotate-90 transition-all cursor-pointer';
   const heroThumbs = 'hero-thumb rounded-md shadow-md object-no-repeat bg-cover bg-top relative';
   const thumbs = {
     meatBunker: {
@@ -260,7 +269,7 @@ function App() {
           </div>
         </div>
 
-        <div className="nav-wrap flex flex-row h-full bg-white">
+        <div className={`nav-wrap flex flex-row bg-white`} style={{ height: windowHeight * 2 + 'px' }}>
           <div className="relative flex min-w-[74px] min-h-full shadow-md flex-col items-center pt-[22px] bg-white">
             <span className="material-symbols-outlined hover:text-blue-600 cursor-pointer mb-12">start</span>
             <div className="relative flex justify-center w-full bg-white hover:bg-slate-50 transition-all cursor-pointer">
@@ -305,8 +314,8 @@ function App() {
             </div>
 
             <div
-              className={`pane flex flex-col h-full w-full absolute m-auto left-0 right-0 box z-20 ease-in-out duration-500`}
-              style={{ top: panePosition + 'px' }}
+              className={`pane flex flex-col w-full absolute m-auto left-0 right-0 box z-20 ease-in-out duration-500`}
+              style={{ top: panePosition + 'px', height: windowHeight + 500 + 'px' }}
             >
               <div></div>
               <div
@@ -323,6 +332,20 @@ function App() {
 
             <div className="desktop mx-8 mt-8 mb-6">
               <div className="text-[48px] text-slate-400 ml-1 mt-4 mb-10 uppercase roboto-thin">Campaigns</div>
+
+              <div className="flex mt-8 ml-2 mr-2 mb-4 border-b-[1px] text-sm">
+                <div className="relative flex justify-center items-center flex-col bg-blue-600 text-white min-w-[120px] rounded-t-[1px]">
+                  <div className="mx-4 my-2">Book</div>
+                  <div className="absolute h-[3px] bg-cyan-300 w-full bottom-[-3px] rounded-b-[1px]"></div>
+                </div>
+                <div className="flex justify-center items-center text-black px-4 min-w-[120px] hover:bg-slate-100 transition-all cursor-pointer">
+                  List View
+                </div>
+                <div className="flex justify-center items-center text-black px-4 min-w-[120px] hover:bg-slate-100 transition-all cursor-pointer">
+                  Media Plays
+                </div>
+              </div>
+
               <div className="desktop-left">
                 <div
                   className={heroThumbs}
