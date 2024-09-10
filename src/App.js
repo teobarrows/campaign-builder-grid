@@ -32,7 +32,8 @@ function App() {
       uniques: ['1.2M', 'Monthly Uniques'],
     },
     wineEnd: {
-      thumb: 'https://assets.barrowsconnectedstore.com/thumbnails/350x350/tn-wine.jpg',
+      // thumb: 'https://assets.barrowsconnectedstore.com/thumbnails/1080x1080/tn-wine.jpg',
+      thumb: '/1080x1080/tn-wine.jpg',
       name: 'Wine End Cap',
       category: 'AlcBev',
       uniques: ['1M', 'Monthly Uniques'],
@@ -44,7 +45,8 @@ function App() {
       uniques: ['500K', 'Monthly Uniques'],
     },
     entrance: {
-      thumb: 'https://assets.barrowsconnectedstore.com/thumbnails/350x350/tn-entrance-2.jpg',
+      // thumb: 'https://assets.barrowsconnectedstore.com/thumbnails/350x350/tn-entrance-2.jpg',
+      thumb: '/1080x1080/tn-entrance-2.jpg',
       name: 'Billboard',
       category: 'Entrance',
       uniques: ['1.2M', 'Monthly Uniques'],
@@ -68,7 +70,8 @@ function App() {
       uniques: ['300K', 'Monthly Uniques'],
     },
     blueEnd: {
-      thumb: 'https://assets.barrowsconnectedstore.com/thumbnails/350x350/tn-endcap-blue.jpg',
+      // thumb: 'https://assets.barrowsconnectedstore.com/thumbnails/350x350/tn-endcap-blue.jpg',
+      thumb: '/1080x1080/tn-endcap-blue.jpg',
       name: 'End Cap',
       category: 'Grocery',
       uniques: ['320K', 'Monthly Uniques'],
@@ -315,7 +318,7 @@ function App() {
 
             <div
               className={`pane flex flex-col w-full absolute m-auto left-0 right-0 box z-20 ease-in-out duration-500`}
-              style={{ top: panePosition + 'px', height: windowHeight + 500 + 'px' }}
+              style={{ top: panePosition + 'px', height: windowHeight + 660 + 'px' }}
             >
               <div></div>
               <div
@@ -327,7 +330,11 @@ function App() {
                 </span>
               </div>
               <div className="curve w-full bg-white shadow-pane"></div>
-              <div className="flex w-full h-full bg-white">blah</div>
+              <div className="flex w-full h-full bg-white items-center justify-center">
+                <div className="flex items-center justify-center m-12 bg-slate-100 h-full w-full rounded-md">
+                  Form here
+                </div>
+              </div>
             </div>
 
             <div className="desktop mx-8 mt-8 mb-6">
@@ -352,6 +359,7 @@ function App() {
                   style={{
                     backgroundImage: 'url("' + thumbs.wineEnd.thumb + '")',
                     backgroundRepeat: 'no-repeat',
+                    backgroundPositionY: '-36px',
                   }}
                 >
                   {renderThumbnail(thumbs.wineEnd, true)}
@@ -371,6 +379,7 @@ function App() {
                     style={{
                       backgroundImage: 'url("' + thumbs.blueEnd.thumb + '")',
                       backgroundRepeat: 'no-repeat',
+                      backgroundPositionY: '-16px',
                     }}
                   >
                     {renderThumbnail(thumbs.blueEnd, false)}
