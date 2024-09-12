@@ -427,7 +427,7 @@ function App() {
               <div className="flex flex-col bg-white">
                 <div className="text-4xl roboto-thin uppercase mx-20 mb-12 text-slate-500">Touchpoint & Category</div>
                 <div className="flex w-full bg-white items-center justify-center">
-                  <div className="flex items-start justify-center mx-12 bg-white w-full rounded-md bg-contain bg-no-repeat bg-top mb-[600px]">
+                  <div className="flex items-start justify-center mx-12 bg-white w-full rounded-md bg-contain bg-no-repeat bg-top mb-[620px]">
                     <div className="flex w-2/3 flex-col">
                       <div className="flex w-full">
                         <div className="flex w-1/2 mx-8 flex-col">
