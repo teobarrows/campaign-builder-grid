@@ -890,7 +890,7 @@ body {
 }
 
 .nav-wrap {
-  height: 2000px;
+  /*height: 2000px;*/
 }
 
 @media screen and (min-width: 1px) and (max-width: 699px) {
@@ -928,9 +928,13 @@ body {
   }
 }
 
+#pane-wrap {
+  display: none;
+}
+
 #pane:hover span {
-  margin-top: 8px;
-  transition: all 0.3s;
+  /*margin-top: 8px;*/
+  /*transition: all 0.3s;*/
 }
 
 

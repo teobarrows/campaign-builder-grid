@@ -40,14 +40,26 @@ function App() {
   };
 
   const thumbClick = (e) => {
-    // document.getElementById('pane').scrollIntoView({ behavior: 'smooth' });
+    console.log(e.target.innerText);
     window.scrollTo({ top: 90, behavior: 'smooth' });
     setSelectedThumb(e.target.style.backgroundImage);
     setIsPaneOpen(true);
     let element = e.target;
-    let tpName = element.children[0].children[0].innerText;
+    let tpName;
+
+    try {
+      if (element.children[0] === null) {
+        tpName = element.children[0].innerText;
+      } else {
+        tpName = element.children[0].children[0].innerText;
+      }
+    } catch (err) {
+      tpName = '';
+    }
+
     console.log(tpName);
     setTouchpointDropValue(tpName);
+    document.getElementById('pane-wrap').style.display = 'block';
   };
 
   useEffect(() => {
@@ -58,9 +70,13 @@ function App() {
       setBaseURL('/1080x1080/');
     }
     // eslint-disable-next-line no-restricted-globals
-    setPanePosition(isPaneOpen ? 360 : screen.height + 560);
-    // eslint-disable-next-line no-restricted-globals
+    setPanePosition(isPaneOpen ? 286 : screen.height + 560);
     setWindowHeight(window.innerHeight);
+    if (!isPaneOpen) {
+      setTimeout(() => {
+        document.getElementById('pane-wrap').style.display = 'none';
+      }, 600);
+    }
   }, [isPaneOpen]);
 
   useEffect(() => {
@@ -337,7 +353,7 @@ function App() {
           </div>
         </div>
         <div className="w-full h-[6px] bg-[#084999]"></div>
-        <div className={`nav-wrap flex flex-row bg-white pb-[300px]`}>
+        <div className={`nav-wrap flex flex-row bg-white`}>
           <div className="relative flex min-w-[74px] min-h-full shadow-md flex-col items-center pt-[22px] bg-white">
             <span className="material-symbols-outlined hover:text-blue-600 cursor-pointer mb-12">start</span>
             <div className="relative flex justify-center w-full bg-white hover:bg-slate-50 transition-all cursor-pointer">
@@ -390,20 +406,23 @@ function App() {
             </div>
 
             <div
-              className={`pane flex flex-col w-full absolute m-auto left-0 right-0 box z-20 ease-in-out duration-500`}
+              className={`pane flex flex-col w-auto absolute m-auto left-[114px] right-[34px] box z-20 ease-in-out duration-500 shadow-md rounded-lg justify-end`}
               style={{ top: panePosition + 'px' }}
+              id="pane-wrap"
             >
               <div
-                className="flex w-16 h-16 absolute m-auto left-0 right-0 shadow-md -top-[20px] rounded-full justify-center items-center bg-white border-[1px] hover:bg-slate-100 hover:scale-110 transition-all cursor-pointer"
+                className="flex absolute m-auto left-0 right-0 top-[20px] mx-6 justify-center items-center bg-white hover:text-blue-600 transition-all cursor-pointer"
                 onClick={togglePane}
                 id={'pane'}
               >
-                <span className="material-symbols-outlined my-4 scale-150 mt-[19px] cursor-pointer">
-                  {isPaneOpen ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}
-                </span>
+                <div className="rounded-full flex items-center justify-center border-[1px] w-[56px] h-[56px]">
+                  <span className="material-symbols-outlined scale-125 mt-[2px] cursor-pointer">
+                    {isPaneOpen ? 'close' : 'close'}
+                  </span>
+                </div>
               </div>
-              <div className="curve w-full bg-white shadow-pane"></div>
-              <div className="flex flex-col bg-white">
+              {/*<div className="curve w-full bg-white"></div>*/}
+              <div className="flex flex-col bg-white pt-24">
                 <div className="text-4xl roboto-thin uppercase mx-20 mb-12 text-slate-500">Touchpoint & Category</div>
                 <div className="flex w-full bg-white items-center justify-center">
                   <div className="flex items-start justify-center mx-12 bg-white w-full rounded-md bg-contain bg-no-repeat bg-top mb-[600px]">
