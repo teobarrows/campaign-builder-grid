@@ -511,7 +511,7 @@ function App() {
                       <div
                         id="form-thumb"
                         className={
-                          selectedThumb ? squareThumbs : 'bg-slate-50 border-2 min-w-full min-h-[500px] rounded-xl'
+                          selectedThumb ? squareThumbs : 'bg-slate-50 border-2 min-w-full min-h-[566px] rounded-xl'
                         }
                         style={{
                           // backgroundImage: 'url("' + thumbs.habaSmallEnd.thumb + '")',
