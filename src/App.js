@@ -16,7 +16,7 @@ function App() {
   const [touchpointDropValue, setTouchpointDropValue] = React.useState('');
   const togglePane = (e) => {
     if (isPaneOpen) {
-      window.scrollTo({ top: 262, behavior: 'smooth' });
+      window.scrollTo({ top: 268, behavior: 'smooth' });
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
