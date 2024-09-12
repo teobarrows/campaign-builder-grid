@@ -337,7 +337,7 @@ function App() {
           </div>
         </div>
         <div className="w-full h-[6px] bg-[#084999]"></div>
-        <div className={`nav-wrap flex flex-row bg-white`} style={{ height: windowHeight * 2 + 'px' }}>
+        <div className={`nav-wrap flex flex-row bg-white pb-[300px]`}>
           <div className="relative flex min-w-[74px] min-h-full shadow-md flex-col items-center pt-[22px] bg-white">
             <span className="material-symbols-outlined hover:text-blue-600 cursor-pointer mb-12">start</span>
             <div className="relative flex justify-center w-full bg-white hover:bg-slate-50 transition-all cursor-pointer">
@@ -391,7 +391,7 @@ function App() {
 
             <div
               className={`pane flex flex-col w-full absolute m-auto left-0 right-0 box z-20 ease-in-out duration-500`}
-              style={{ top: panePosition + 'px', height: windowHeight + 660 + 'px' }}
+              style={{ top: panePosition + 'px' }}
             >
               <div
                 className="flex w-16 h-16 absolute m-auto left-0 right-0 shadow-md -top-[20px] rounded-full justify-center items-center bg-white border-[1px] hover:bg-slate-100 hover:scale-110 transition-all cursor-pointer"
