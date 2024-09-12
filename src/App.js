@@ -54,7 +54,8 @@ function App() {
     if (window.location.hostname === 'localhost') {
       setBaseURL('/1080x1080/');
     } else {
-      setBaseURL('https://assets.barrowsconnectedstore.com/thumbnails/1080x1080/');
+      // setBaseURL('https://assets.barrowsconnectedstore.com/thumbnails/1080x1080/');
+      setBaseURL('/1080x1080/');
     }
     // eslint-disable-next-line no-restricted-globals
     setPanePosition(isPaneOpen ? 360 : screen.height + 560);
