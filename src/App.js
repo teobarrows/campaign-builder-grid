@@ -411,18 +411,20 @@ function App() {
               id="pane-wrap"
             >
               <div
-                className="flex absolute m-auto left-0 right-0 top-[20px] mx-6 justify-center items-center bg-white hover:text-blue-600 transition-all cursor-pointer"
-                onClick={togglePane}
+                className="flex w-full justify-end items-center bg-white hover:text-blue-600 transition-all cursor-pointer"
                 id={'pane'}
               >
-                <div className="rounded-full flex items-center justify-center border-[1px] w-[56px] h-[56px]">
-                  <span className="material-symbols-outlined scale-125 mt-[2px] cursor-pointer">
+                <div
+                  className="rounded-full flex items-center justify-center w-[42px] h-[42px] mt-4 mr-4 hover:bg-slate-50 transition-all"
+                  onClick={togglePane}
+                >
+                  <span className="material-symbols-outlined scale-100 mt-[2px] cursor-pointer">
                     {isPaneOpen ? 'close' : 'close'}
                   </span>
                 </div>
               </div>
               {/*<div className="curve w-full bg-white"></div>*/}
-              <div className="flex flex-col bg-white pt-24">
+              <div className="flex flex-col bg-white">
                 <div className="text-4xl roboto-thin uppercase mx-20 mb-12 text-slate-500">Touchpoint & Category</div>
                 <div className="flex w-full bg-white items-center justify-center">
                   <div className="flex items-start justify-center mx-12 bg-white w-full rounded-md bg-contain bg-no-repeat bg-top mb-[600px]">
