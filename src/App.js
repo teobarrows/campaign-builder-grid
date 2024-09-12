@@ -394,7 +394,7 @@ function App() {
               style={{ top: panePosition + 'px', height: windowHeight + 660 + 'px' }}
             >
               <div
-                className="flex w-16 h-16 absolute m-auto left-0 right-0 shadow-md -top-[30px] rounded-full justify-center items-center bg-white border-[1px] hover:bg-slate-100 hover:scale-110 transition-all cursor-pointer"
+                className="flex w-16 h-16 absolute m-auto left-0 right-0 shadow-md -top-[20px] rounded-full justify-center items-center bg-white border-[1px] hover:bg-slate-100 hover:scale-110 transition-all cursor-pointer"
                 onClick={togglePane}
                 id={'pane'}
               >
