@@ -406,7 +406,7 @@ function App() {
             </div>
 
             <div
-              className={`pane flex flex-col w-auto absolute m-auto left-[114px] right-[34px] box z-20 ease-in-out duration-500 shadow-md rounded-lg justify-end`}
+              className={`pane flex flex-col w-auto absolute m-auto left-[94px] right-[14px] box z-20 ease-in-out duration-500 rounded-lg justify-end`}
               style={{ top: panePosition + 'px' }}
               id="pane-wrap"
             >
@@ -415,10 +415,10 @@ function App() {
                 id={'pane'}
               >
                 <div
-                  className="rounded-full flex items-center justify-center w-[42px] h-[42px] mt-4 mr-4 hover:bg-slate-50 transition-all"
+                  className="rounded-full flex items-center justify-center w-[42px] h-[42px] mt-4 mr-6 hover:bg-slate-50 transition-all"
                   onClick={togglePane}
                 >
-                  <span className="material-symbols-outlined scale-100 mt-[2px] cursor-pointer">
+                  <span className="material-symbols-outlined scale-150 mt-[2px] cursor-pointer">
                     {isPaneOpen ? 'close' : 'close'}
                   </span>
                 </div>
